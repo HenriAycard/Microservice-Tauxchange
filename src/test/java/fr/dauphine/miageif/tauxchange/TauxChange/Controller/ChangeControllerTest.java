@@ -195,6 +195,7 @@ public class ChangeControllerTest {
         assertEquals("1.7582", String.valueOf(_tauxchange.getTaux()));
     }
 
+    @Test
     @AfterAll
     public void deleteTauxChangeById() throws Exception {
         String uri = "/taux-change/id/10016";
