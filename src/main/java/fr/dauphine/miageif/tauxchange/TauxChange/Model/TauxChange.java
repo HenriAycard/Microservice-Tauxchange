@@ -1,6 +1,7 @@
 package fr.dauphine.miageif.tauxchange.TauxChange.Model;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -50,6 +51,8 @@ public class TauxChange {
 
     // GETTER
 
+    public Long getId() { return id; }
+
     public String getSource() { return source; }
 
     public String getDest() { return dest; }
@@ -62,6 +65,8 @@ public class TauxChange {
 
     // SETTER
 
+    public void setId(Long id) { this.id = id; }
+
     public void setSource(String source) { this.source = source; }
 
     public void setDestination(String dest) { this.dest = dest; }
@@ -70,4 +75,16 @@ public class TauxChange {
 
     public void setDate(String date) { this.date = date; }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TauxChange that = (TauxChange) o;
+        return Objects.equals(id, that.id) && Objects.equals(source, that.source) && Objects.equals(dest, that.dest) && Objects.equals(taux, that.taux) && Objects.equals(date, that.date);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, source, dest, taux, date);
+    }
 }

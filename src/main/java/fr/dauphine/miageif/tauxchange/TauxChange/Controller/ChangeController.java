@@ -16,9 +16,6 @@ import java.util.Optional;
 @RestController
 public class ChangeController {
 
-  // Spring se charge de la création d'instance
-  @Autowired
-  private Environment environment;
 
   // Spring se charge de la création d'instance
   @Autowired
@@ -124,7 +121,7 @@ public class ChangeController {
 
     // curl -X GET "http://localhost:8000/taux-change/id/10001"
     @GetMapping("/taux-change/id/{id}")
-    public ResponseEntity<TauxChange> getTauxChangeSourceByID
+    public ResponseEntity<TauxChange> getTauxChangeByID
             (@PathVariable Long id){
         Optional<TauxChange> tauxChange = repository.findById(id);
 
@@ -166,17 +163,6 @@ public class ChangeController {
         }
     }
 
-    // curl -X DELETE "http://localhost:8000/taux-change"
-    @DeleteMapping("/taux-change")
-    public ResponseEntity<HttpStatus> deleteAllTauxChange() {
-        try {
-            repository.deleteAll();
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-
-    }
 
     // PUT
     // curl -X PUT -H "Content-type: application/json" -d "{\"source\" : \"AUD\", \"dest\" : \"USD\", \"taux\" : 0.7582, \"date\" : \"2021-06-24\"}" "http://localhost:8000/taux-change/id/10016"
