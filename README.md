@@ -10,10 +10,13 @@ du 25 mai 2021, 1 euro vaut 1.22 dollar US.
 ![Screenshot](DiagrammeDeClassTauxChange.png)
 
 # Installation
-## Set up the Spring Boot Application
 ```bash
 git clone https://github.com/HenriAycard/Microservice-Tauxchange.git
 ```
+```bash
+mvm clean install package
+```
+## Set up the Spring Boot Application
 ```bash
 ./mvnw package && java -jar target/tauxchange
 ```
