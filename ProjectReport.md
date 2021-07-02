@@ -23,7 +23,7 @@ Le projet est composé de deux micro-services indépendants. Le micro-services O
 lorsqu'on crée une nouvelle opération et que l'utilisateur ne spécifie pas de taux. Mais le micro-services OperationChange peut aussi fonctionner 
 sans que le micro-service TauxChange soit démarré, dans ce cas l'utilisateur devra spécifier un taux à sa création.
 
-Chaque micro-service possède un REST API et une base de donnée indépendante. Les tilisateurs peuvent réaliser des requêtes HTTP (POSR, GET, PUT, DELETE) sur un navigateur ou en ligne de commande.
+Chaque micro-service possède un REST API et une base de donnée indépendante. Les utilisateurs peuvent réaliser des requêtes HTTP (POSR, GET, PUT, DELETE) sur un navigateur ou en ligne de commande.
 
 ## Taux de change
 Ce microservice a pour but de publier et stocker les taux de change par date au sein d'une base de données sous H2.
